@@ -6,8 +6,10 @@ const bcrypt = require('bcrypt'),
   } = require('../config/nodemailer')
 
 exports.indexView = (req, res) => res.render('index')
-exports.signupViewUser = (req, res) => res.render('user/signupUser')
 
+exports.signupViewUser = (req, res) => {
+  res.render('user/signupUser')
+}
 exports.signupProcessUser = async (req, res) => {
   const {
     email,

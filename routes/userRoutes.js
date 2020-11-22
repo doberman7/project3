@@ -14,8 +14,8 @@ const uploadPicture = require('../config/cloudinary')
 
 /* GET home page */
 router.get('/', indexView);
-router.get('/signup-user', signupViewUser);
-router.post('/signup-user', signupProcessUser)
+router.get('/signup', signupViewUser);
+router.post('/signup', signupProcessUser)
 
 router.get('/login', loginView)
 router.post('/login', loginProcess)
