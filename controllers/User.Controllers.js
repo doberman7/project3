@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt'),
   } = require('../config/nodemailer')
 
 exports.indexView = (req, res) => res.render('index')
-exports.signupViewUser = (req, res) => res.render('auth/signupUser')
+exports.signupViewUser = (req, res) => res.render('user/signupUser')
 
 exports.signupProcessUser = async (req, res) => {
   const {
@@ -15,7 +15,7 @@ exports.signupProcessUser = async (req, res) => {
     name
   } = req.body
   if (!email || !password) {
-    return res.render('auth/signupUser', {
+    return res.render('user/signupUser', {
       errorMessage: 'Please fill email and password '
     })
   }
@@ -23,7 +23,7 @@ exports.signupProcessUser = async (req, res) => {
     email
   })
   if (user) {
-    return res.render('auth/signupUser', {
+    return res.render('user/signupUser', {
       errorMessage: 'user already exists'
     })
   }
@@ -37,7 +37,7 @@ exports.signupProcessUser = async (req, res) => {
     //esto es de nodemailer
     .then(() => {
       emailRegistro(email, name)
-      res.render('auth/login', {
+      res.render('user/login', {
         infoFlash: "Welcome, please login"
       })
     }).catch(err => {
@@ -47,7 +47,7 @@ exports.signupProcessUser = async (req, res) => {
 
 exports.loginView = (req, res) => {
   // console.log(req.session);
-  res.render("auth/login", {
+  res.render("user/login", {
     "errorMessage": req.flash("error")
   });
 }
