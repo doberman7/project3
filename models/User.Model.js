@@ -1,5 +1,8 @@
-const Schema = require('mangose')
-const model = require('mangose')
+const {
+  Schema,
+  model
+} = require('mongoose')
+
 
 const userSchema = new Schema({
   email: {
@@ -12,7 +15,8 @@ const userSchema = new Schema({
     type: String,
     trim: true,
   },
-  {timestamp: true}
+}, {
+  timestamps: true
 })
 
-module.exports = model("User",userSchema)
+module.exports = model("User", userSchema)
