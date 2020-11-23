@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt'),
 exports.indexView = (req, res) => res.render('index')
 
 exports.signupViewUser = (req, res) => {
-  res.render('user/signupUser')
+  res.render('user/signup')
 }
 exports.signupProcessUser = async (req, res) => {
   const {
@@ -17,7 +17,7 @@ exports.signupProcessUser = async (req, res) => {
     name
   } = req.body
   if (!email || !password) {
-    return res.render('user/signupUser', {
+    return res.render('user/signup', {
       errorMessage: 'Please fill email and password '
     })
   }
@@ -25,7 +25,7 @@ exports.signupProcessUser = async (req, res) => {
     email
   })
   if (user) {
-    return res.render('user/signupUser', {
+    return res.render('user/signup', {
       errorMessage: 'user already exists'
     })
   }
