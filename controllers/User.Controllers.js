@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt'),
 
 exports.indexView = (req, res) => res.render('index')
 
-exports.signupViewUser = (req, res) => {
+exports.signupView = (req, res) => {
   res.render('user/signup')
 }
 exports.signupProcessUser = async (req, res) => {

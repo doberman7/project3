@@ -1,7 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const {indexView,
-  signupViewUser,
+  signupView,
   loginView,
   profilePicture,
   profileView,
@@ -14,7 +14,7 @@ const uploadPicture = require('../config/cloudinary')
 
 /* GET home page */
 router.get('/', indexView);
-router.get('/signup', signupViewUser);
+router.get('/signup', signupView);
 router.post('/signup', signupProcessUser)
 
 router.get('/login', loginView)
