@@ -3,21 +3,7 @@
   <div class="container" >
 
     <form action="/login" method="post">
-      {{#if errorMessage}}
-      <div class="alert alert-danger" role="alert">
-        {{errorMessage}}
-      </div>
-      {{/if}}
-      {{#if infoFlash}}
-      <div class="alert alert-info" role="alert">
-        {{infoFlash}}
-      </div>
-      {{/if}}
-      {{#if error}}
-      <div class="alert alert-warning" role="alert">
-        {{error}}
-      </div>
-      {{/if}}
+
       <div class="form-group">
         <label for="email">Email address</label>
         <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">

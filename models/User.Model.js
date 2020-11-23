@@ -15,6 +15,8 @@ const userSchema = new Schema({
     type: String,
     trim: true,
   },
+  picture: { type: String, default: 'https://memegenerator.net/img/instances/67438689/oh-great-im-a-profile-photo.jpg' },
+
 }, {
   timestamps: true
 })

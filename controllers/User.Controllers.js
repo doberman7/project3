@@ -91,10 +91,12 @@ exports.profilePicture = (req, res) => {
       new: true
     })
     .then(() => {
-      res.redirect('profile')
+      res.render('profile',{infoFlash:"cool new image"})
     })
-    .catch(
-      res.redirect('profile')
+    .catch((e) => {
+        console.log(e);
+        res.render('profile',{errorMessage:e})
+      }
     );
 }
 
