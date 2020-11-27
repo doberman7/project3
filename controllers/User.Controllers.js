@@ -10,6 +10,7 @@ exports.indexView = (req, res) => res.render('index')
 exports.signupView = (req, res) => {
   res.render('user/signup')
 }
+
 exports.signupProcessUser = async (req, res) => {
   const {
     email,
